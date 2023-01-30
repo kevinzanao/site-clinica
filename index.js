@@ -1,4 +1,8 @@
+import { consultList } from "./consult-list.js";
+
 const $todayList = document.querySelector('.today-list');
+const $tomorrowList = document.querySelector('.tomorrow-list');
+const $anyDayList= document.querySelector('.anyday-list')
 
 function createPersonInfo(image, name, queryType) {
    let div = document.createElement('div');
@@ -58,10 +62,39 @@ function createQueryInfo(queryStartTime, duration) {
 }
 
 function createQuery() {
-   let div = document.createElement('div');
+   const div_today = document.createElement('div');
+   const div_tomorrow = document.createElement('div');
+   const div_anyday = document.createElement('div');
 
-   div.appendChild(createPersonInfo("./assets/img/Ellipse 4.png", "Ricarudo", "remota"));
-   div.appendChild(createQueryInfo("13:00", 40));
-   $todayList.appendChild(div);
+   for(let i = 0; i < consultList.today.length; i++) {
+      let consult = consultList.today[i].consult;
+
+      div_today.appendChild(createPersonInfo(consult.image, consult.name, consult.type));
+      div_today.appendChild(createQueryInfo(consult.timeStart, consult.duration));
+      $todayList.appendChild(div_today);
+   
+   }
+
+   
+   for(let i = 0; i < consultList.tomorrow.length; i++) {
+      let consult = consultList.tomorrow[i].consult;
+
+      div_tomorrow.appendChild(createPersonInfo(consult.image, consult.name, consult.type));
+      div_tomorrow.appendChild(createQueryInfo(consult.timeStart, consult.duration));
+      $tomorrowList.appendChild(div_tomorrow);
+   
+   }
+
+   
+   for(let i = 0; i < consultList.anyday.length; i++) {
+      let consult = consultList.anyday[i].consult;
+
+      div_anyday.appendChild(createPersonInfo(consult.image, consult.name, consult.type));
+      div_anyday.appendChild(createQueryInfo(consult.timeStart, consult.duration));
+      $anyDayList.appendChild(div_anyday);
+   
+   }
 }
 
+createQuery()
+console.log(consultList)
