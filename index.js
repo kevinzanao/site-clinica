@@ -2,7 +2,7 @@ import { consultList } from "./consult-list.js";
 
 const $todayList = document.querySelector('#today-list');
 const $tomorrowList = document.querySelector('#tomorrow-list');
-const $anyDayList= document.querySelector('#anyday-list')
+const $anyDayList = document.querySelector('#anyday-list');
 
 function createPersonInfo(image, name, queryType) {
    let div = document.createElement('div');
@@ -15,10 +15,11 @@ function createPersonInfo(image, name, queryType) {
    let p_queryType = document.createElement('p');
    let img_iconChat = document.createElement('img');
 
+
    img_person.src = image;
    img_person.alt = "person image";
    p_personName.innerText = name;
-   img_type.src = "./assets/svg/cam-icon.svg";
+   img_type.src = queryType === "remota" ? "./assets/svg/cam-icon.svg" : "./assets/svg/local-icon.svg";
    p_queryType.innerText = `Consulta ${queryType}`;
    img_iconChat.src = "./assets/svg/chat-icon.svg";
 
@@ -46,8 +47,8 @@ function timeConvert(start, duration) {
    let time = String(startTime + durationTime);
    let halfTime = Math.floor(time.length / 2);
    let updatedTime = time.substring(0, halfTime) + ":" + time.substring(2,time);
-
-   return `${start} - ${updatedTime} (${durationTime} ${timeComplement})`;
+   
+   return `${start} - ${updatedTime} (${duration.replace("01:00", "1")} ${timeComplement})`;
 }
 
 function createQueryInfo(queryStartTime, duration, type) {
@@ -56,24 +57,28 @@ function createQueryInfo(queryStartTime, duration, type) {
    let span_queryTime = document.createElement('span');
    let button_video = document.createElement('button');
    let button_audio = document.createElement('button');
-   let button_adress = document.createElement('button');
+   let button_address = document.createElement('button');
 
    span_queryTime.innerText = timeConvert(queryStartTime, duration);
 
+   button_video.classList.add("video-call");
+   button_audio.classList.add("audio-call");
+   button_address.classList.add("address-button")
+
    if (type === "local") {
-      button_adress.innerText = "Ver endereço";
+      button_address.innerText = "Ver endereço";
       button_video.style.display = "none";
       button_audio.style.display = "none";
    } else if (type === "remota") {
       button_video.innerText = "ligar por video";
       button_audio.innerText = "ligar por áudio";
-      button_adress.style.display = "none";
+      button_address.style.display = "none";
    }
 
 
    div_contact.appendChild(button_video);
    div_contact.appendChild(button_audio);
-   div_contact.appendChild(button_adress);
+   div_contact.appendChild(button_address);
    div.appendChild(span_queryTime);
    div.appendChild(div_contact);
 
