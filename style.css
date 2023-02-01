@@ -193,27 +193,25 @@ footer .footer-content nav ul li a {
    align-items: center;
    justify-content: center;
    text-decoration: none;
+   /* z-index: -1; */
 }
 
-footer .footer-content nav ul li:not(:first-child) a img,
-footer .footer-content nav ul li:not(:first-child) a span {
+footer .footer-content nav ul li a img,
+footer .footer-content nav ul li a span {
    color: var(--text-color);
 }
 
 footer .footer-content nav ul li a img {
-   margin-bottom: 0.3rem;
-}
-
-footer .footer-content nav ul li:first-child a span {
-   color: var(--button-color2);
+   padding-bottom: 0.3rem;
 }
 
 footer .footer-content nav ul li a span {
    font-size: 0.8rem;
 }
 
-
-
+footer .footer-content nav ul li .active-toolbar-button span {
+   color: var(--button-color2);
+}
 
 
 
