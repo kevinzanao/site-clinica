@@ -160,6 +160,47 @@ header .header-content p {
    background-color: var(--button-color2);
 }
 
+#fade {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+   z-index: 1;
+}
+
+#modal {
+   position: fixed;
+   right: 15%;
+   top: 78%;
+   z-index: 2;
+}
+
+#fade,
+#modal {
+   transition: 0.5s;
+   opacity: 1;
+   pointer-events: all;
+}
+
+#fade.hide {
+   opacity: 0;
+}
+
+.floating-button {
+   position: absolute;
+}
+
+.floating-button button {
+   padding: .8rem 1rem;
+   background-color: var(--button-color2);
+   border: none;
+   border-radius: 50%;
+   color: #fff;
+   cursor: pointer;
+}
+
 footer {
    width: 100%;
    height: 50px;
@@ -193,19 +234,21 @@ footer .footer-content nav ul li a {
    align-items: center;
    justify-content: center;
    text-decoration: none;
-   /* z-index: -1; */
 }
 
 footer .footer-content nav ul li a img,
 footer .footer-content nav ul li a span {
    color: var(--text-color);
+   font-size: 0.8rem;
 }
 
 footer .footer-content nav ul li a img {
    padding-bottom: 0.3rem;
+   user-select: none;
 }
 
-footer .footer-content nav ul li a span {
+footer .footer-content nav ul li:first-child a span {
+   color: var(--button-color2);
    font-size: 0.8rem;
 }
 

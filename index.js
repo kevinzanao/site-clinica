@@ -131,4 +131,3 @@ function showQuery() {
 }
 
 showQuery()
-console.log(consultList)
