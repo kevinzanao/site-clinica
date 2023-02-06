@@ -173,7 +173,7 @@ header .header-content p {
 #modal {
    position: fixed;
    right: 15%;
-   top: 78%;
+   bottom: 40%;
    z-index: 2;
 }
 
@@ -192,13 +192,65 @@ header .header-content p {
    position: absolute;
 }
 
+.floating-button .local-query,
+.floating-button .video-query {
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+.floating-button .local-query button,
+.floating-button .video-query button, 
 .floating-button button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 40.59px;
+   width: 39.8px;
    padding: .8rem 1rem;
    background-color: var(--button-color2);
    border: none;
    border-radius: 50%;
    color: #fff;
    cursor: pointer;
+}
+
+.floating-button button,
+.floating-button .video-query button {
+   margin-top: .5rem;
+}
+
+.floating-button .local-query span,
+.floating-button .video-query span {
+   position: absolute;
+   text-align: center;
+   margin-top: 1rem;
+   font-size: .9rem;
+   padding: 2px;
+   border-radius: 16px;
+   color: var(--text-color);
+   background-color: #fff;
+   
+}
+
+.floating-button .local-query span{
+   width: 290px;
+   margin-right: 3rem;
+}
+
+.floating-button .video-query span {
+   width: 210px;
+   margin-right: 3rem;
+}
+
+.appear {
+   opacity: 1;
+   transition: 1s;
+}
+
+.hidden {
+   opacity: 0;
+   transform: translateY(20px); 
+   transition: 1s;
 }
 
 footer {
@@ -263,6 +315,24 @@ footer .footer-content nav ul li .active-toolbar-button span {
 
 @media screen and (min-width: 768px) {
 
+}
+
+@media screen and (max-width: 375px) {
+
+   .floating-button .local-query span,
+   .floating-button .video-query span {
+      font-size: .8rem;
+   }
+
+   .floating-button .local-query span{
+      width: 250px;
+      margin-right: 3rem;
+   }
+   
+   .floating-button .video-query span {
+      width: 200px;
+      margin-right: 3rem;
+   }  
 }
 
 

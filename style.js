@@ -1,6 +1,12 @@
 const $fade = document.getElementById('fade');
-const $button = document.querySelector('.floating-button button');
+const $buttonAddQuery = document.querySelector('.floating-button > button');
+const $buttonVideoQuery = document.querySelector('.video-query');
+const $buttonLocalQuery = document.querySelector('.local-query');
 
-$button.addEventListener('click', () => {
+$buttonAddQuery.addEventListener('click', () => {
    $fade.classList.toggle("hide");
+   $buttonVideoQuery.classList.toggle("hidden");
+   $buttonLocalQuery.classList.toggle("hidden");
+   $buttonVideoQuery.classList.toggle("appear");
+   $buttonLocalQuery.classList.toggle("appear");
 })
