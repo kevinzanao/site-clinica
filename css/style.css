@@ -24,7 +24,7 @@ header {
    display: flex;
    align-items: flex-end;
    justify-content: center;
-   padding: 0 0 1.4rem 1rem;
+   padding: 1rem 0 1.4rem 1rem;
    margin-bottom: 1rem;
 }
 
@@ -85,10 +85,15 @@ header .header-content p {
    border-radius: 10px 10px 0 0;
 }
 
+.query-list .list .list-items .person-content > div > img {
+   width: 2.5rem;
+}
+
 .query-list .list .list-items .person-content > img {
-   padding: 0 13px;
+   padding: 0 0.9rem;
    background-color: var(--background-color);
    border-radius: 50%;
+   cursor: pointer;
 }
 
 .query-list .list .list-items .person-content div {
@@ -106,6 +111,11 @@ header .header-content p {
    font-size: 0.9rem;
    font-weight: 700;
    margin-bottom: .5rem;
+}
+
+.query-list .list .list-items .person-content .person-info .query {
+   display: flex;
+   align-items: center;
 }
 
 .query-list .list .list-items .person-content .person-info .query p {
@@ -136,9 +146,10 @@ header .header-content p {
    color: #fff;
    border: none;
    padding: 1rem;
-   border-radius: 0.5rem;
-   font-size: 0.9rem;
-   margin-top: 0.5rem;
+   border-radius: .5rem;
+   font-size: .9rem;
+   margin-top: .5rem;
+   cursor: pointer;
 }
 
 .query-list .list .list-items .query-info .audio-call {
@@ -146,18 +157,21 @@ header .header-content p {
    padding: 1rem;
    margin-top: .5rem;
    background-color: transparent;
+   font-size: .9rem;
    border-radius: 0.5rem;
+   cursor: pointer;
 }
 
 .query-list .list .list-items .query-info .address-button {
    width: 100%;
-   margin-top: 0.5rem;
+   margin-top: .5rem;
    padding: 1rem;
    border: none;
-   border-radius: 0.5rem;
-   font-size: 0.9rem;
+   border-radius: .5rem;
+   font-size: .9rem;
    color: #fff;
    background-color: var(--button-color2);
+   cursor: pointer;
 }
 
 #fade {
@@ -173,11 +187,13 @@ header .header-content p {
 #modal {
    position: fixed;
    right: 18%;
-   bottom: 50%;
+   bottom: 0%;
    z-index: 2;
+   margin-bottom: 15rem;
 }
 
 #modal .modal-body {
+   /* height: 100%; */
    width: 100%;
 }
 
@@ -189,7 +205,7 @@ header .header-content p {
 }
 
 #fade.hide {
-   opacity: 0;
+   visibility: hidden;
 }
 
 .floating-button {
@@ -215,7 +231,6 @@ header .header-content p {
    border: none;
    border-radius: 50%;
    color: #fff;
-   cursor: pointer;
    filter: drop-shadow(0px 4px 16px rgba(72, 148, 255, 0.5));
 }
 
@@ -245,6 +260,10 @@ header .header-content p {
    width: 210px;
 }
 
+.pointer {
+   cursor: pointer;
+}
+
 .appear {
    opacity: 1;
    transition: 1s;
@@ -266,17 +285,25 @@ footer {
 }
 
 footer .footer-content {
-   max-width: 461px;
-   flex: 1;
+   display: flex;
+   align-items: center;
+   height: 100%;
+   width: 100%;
+   /* max-width: 461px; */
+   /* flex: 1; */
    border-radius: 10px 10px 0 0;
    background-color: #fff;
 }
 
+footer .footer-content nav {
+   width: 100%;
+}
+
 footer .footer-content nav ul {
-   height: 50px;
    display: flex;
    align-items: center;
    justify-content: space-evenly;
+   /* height: 100%; */
 }
 
 footer .footer-content nav ul li {
@@ -316,8 +343,216 @@ footer .footer-content nav ul li .active-toolbar-button span {
 
 /* Responsividade */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 2000px) {
+   html {
+      font-size: 200%;
+   }
 
+   header {
+      margin-top: 1rem;
+      padding-top: 0;
+      padding-bottom: 0;
+   }
+
+   .query-list {
+      margin-top: 1rem;
+      max-width: 1500px;
+   }
+
+   .query-list .list .list-items {
+      height: 410px;
+      margin-bottom: 2rem;
+   }
+
+   .query-list .list .list-items .person-content > img  {
+      height: 95px;
+      width: 95px;
+   }
+
+   .query-list .list .list-items .person-content .person-info div img {
+      height: 30px;
+      width: 30px;
+   }
+
+   #modal {
+      margin-bottom: 13rem;
+   }
+
+   .floating-button .local-query button,
+   .floating-button .video-query button, 
+   .floating-button button  {
+      height: 90px;
+      width: 90px;
+   }
+
+   .floating-button .local-query button img,
+   .floating-button .video-query button img,  
+   .floating-button button img {
+      height: 30px;
+      width: 30px;
+   }
+
+   footer {
+      height: 80px;
+   }
+
+   footer .footer-content nav ul li a img {
+      height: 40px;
+      width: 40px;
+   }
+}
+
+@media screen and (min-width: 1650px) and (max-width: 1999px) {
+   footer .footer-content nav ul li a img {
+      height: 30px;
+      width: 30px;
+   }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1999px) {
+   html {
+      font-size: 170%;
+   }
+
+   header {
+      padding-top: 0;
+      padding-bottom: 0;
+   }
+
+   .query-list {
+      margin-top: 1rem;
+      max-width: 1000px;
+   }
+
+   .query-list .list .list-items {   
+      height: 330px;
+      margin-bottom: 2rem;
+   } 
+
+   .query-list .list .list-items .person-content > img  {
+      height: 75px;
+      width: 75px;
+   }
+
+   .query-list .list .list-items .person-content .person-info div img {
+      height: 25px;
+      width: 25px;
+   }
+
+
+   #modal {
+      margin-bottom: 13.7rem;
+   }
+
+   .floating-button .local-query button,
+   .floating-button .video-query button, 
+   .floating-button button  {
+      height: 80px;
+      width: 80px;
+   }
+
+   .floating-button .local-query button img,
+   .floating-button .video-query button img,  
+   .floating-button button img {
+      height: 24px;
+      width: 24px;
+   }
+
+   footer {
+      height: 70px;
+   }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+   html {
+      font-size: 130%;
+   }
+
+   .query-list {
+      max-width: 700px;
+   }
+   
+   .query-list .list .list-items {
+      height: 250px;
+      margin-bottom: 3rem;
+   } 
+
+   .query-list .list .list-items .person-content > img  {
+      height: 55px;
+      width: 55px;
+   }
+
+   .query-list .list .list-items .person-content .person-info div img {
+      height: 20px;
+      width: 20px;
+   }
+
+   #modal {
+      margin-bottom: 15rem;
+   }
+
+   .floating-button .local-query button,
+   .floating-button .video-query button, 
+   .floating-button button  {
+      height: 70px;
+      width: 70px;
+   }
+
+   .floating-button .local-query button img,
+   .floating-button .video-query button img,  
+   .floating-button button img {
+      height: 20px;
+      width: 20px;
+   }
+
+   footer {
+      height: 60px;
+   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+   .query-list {
+      max-width: 600px;
+   }
+
+   .floating-button .local-query button,
+   .floating-button .video-query button, 
+   .floating-button button  {
+      height: 60px;
+      width: 60px;
+   }
+
+   #modal {
+      margin-bottom: 16.5rem;
+   }
+}
+
+@media screen and (min-width: 650px) and (max-width: 767px) {
+   .query-list {
+      max-width: 600px;
+   }
+   
+   .floating-button .local-query button,
+   .floating-button .video-query button, 
+   .floating-button button  {
+      height: 60px;
+      width: 60px;
+   }
+
+   #modal {
+      margin-bottom: 16.5rem;
+   }
+}
+
+@media screen and (min-width: 426px) {
+   header .header-content {
+      max-width: none;
+   }
+
+   footer .footer-content {
+      max-width: none;
+   }
 }
 
 @media screen and (max-width: 375px) {
