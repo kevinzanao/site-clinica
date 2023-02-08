@@ -49,6 +49,7 @@ header .header-content p {
 
 .container {
    display: flex;
+   flex-direction: column;
    justify-content: center;
    padding: 0 1rem 0 1rem;
 }
@@ -193,7 +194,6 @@ header .header-content p {
 }
 
 #modal .modal-body {
-   /* height: 100%; */
    width: 100%;
 }
 
@@ -276,6 +276,11 @@ header .header-content p {
    transition: .5s;
 }
 
+.new-query {
+   height: 200px;
+   display: none;
+}
+
 footer {
    width: 100%;
    height: 50px;
@@ -325,6 +330,10 @@ footer .footer-content nav ul li a span {
    font-size: 0.8rem;
 }
 
+footer .footer-content nav ul li:hover {
+   border-bottom: 1px solid var(--button-color)
+}
+
 footer .footer-content nav ul li a img {
    padding-bottom: 0.3rem;
    user-select: none;
@@ -332,7 +341,6 @@ footer .footer-content nav ul li a img {
 
 footer .footer-content nav ul li:first-child a span {
    color: var(--button-color2);
-   /* font-size: 0.8rem; */
 }
 
 footer .footer-content nav ul li .active-toolbar-button span {
@@ -364,7 +372,6 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .query-list .list {
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: space-evenly; */
       gap: 0 1rem;
    }
 
@@ -377,17 +384,13 @@ footer .footer-content nav ul li .active-toolbar-button span {
    }
 
    .query-list .list .list-items .person-content > img  {
-      height: 75px;
-      width: 75px;
+      height: 65px;
+      width: 65px;
    }
 
    .query-list .list .list-items .person-content .person-info div img {
       height: 30px;
       width: 30px;
-   }
-
-   #modal {
-      margin-bottom: 13rem;
    }
 
    .floating-button .local-query button,
@@ -448,12 +451,11 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .query-list .list {
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: space-evenly; */
       gap: 0 1rem;
    }
 
    .query-list .list .list-items {   
-      min-width: 377px;
+      min-width: 360px;
       max-width: 383px;
       height: 330px;
       margin-bottom: 2rem;
@@ -468,11 +470,6 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .query-list .list .list-items .person-content .person-info div img {
       height: 25px;
       width: 25px;
-   }
-
-   #modal {
-      right: 10%;
-      margin-bottom: 15rem;
    }
 
    .floating-button .local-query button,
@@ -556,7 +553,6 @@ footer .footer-content nav ul li .active-toolbar-button span {
       width: fit-content;
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: space-evenly; */
       gap: 0 1rem;
    }
    
@@ -569,18 +565,13 @@ footer .footer-content nav ul li .active-toolbar-button span {
    } 
 
    .query-list .list .list-items .person-content > img  {
-      height: 55px;
-      width: 55px;
+      height: 45px;
+      width: 45px;
    }
 
    .query-list .list .list-items .person-content .person-info div img {
       height: 20px;
       width: 20px;
-   }
-
-   #modal {
-      right: 10%;
-      margin-bottom: 15rem;
    }
 
    .floating-button .local-query button,
@@ -597,10 +588,6 @@ footer .footer-content nav ul li .active-toolbar-button span {
       width: 20px;
    }
 
-   /* footer {
-      height: 60px;
-   } */
-
    footer .footer-content nav {
       max-width: 600px;
    }
@@ -610,7 +597,12 @@ footer .footer-content nav ul li .active-toolbar-button span {
    }
 }
 
-
+@media screen and (min-width: 1024px) {
+   #fade,
+   #modal {
+      display: none;
+   }
+}
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
@@ -622,7 +614,6 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .query-list .list {
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: space-evenly; */
       gap: 0 1rem;
    }
 
@@ -637,13 +628,13 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .floating-button .local-query button,
    .floating-button .video-query button, 
    .floating-button button  {
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 50px;
    }
 
    #modal {
       right: 10%;
-      margin-bottom: 14rem;
+      margin-bottom: 12.6rem;
    }
 }
 
@@ -656,7 +647,6 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .query-list .list {
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: space-evenly; */
       gap: 0 1rem;
    }
 
@@ -669,12 +659,13 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .floating-button .local-query button,
    .floating-button .video-query button, 
    .floating-button button  {
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 50px;
    }
 
    #modal {
-      margin-bottom: 16.5rem;
+      right: 10%;
+      margin-bottom: 14.5rem;
    }
 }
 

@@ -32,6 +32,31 @@
             <div class="list" id="anyday-list">
             </div>   
          </div>
+         <div class="new-query">
+            <form action="#">
+               <div id="pacient-name">
+                  <label for="name">Nome do paciente</label>
+                  <input type="text" id="name" name="name" placeholder="Nome completo">
+               </div>
+               <div id="appoinment-type">
+                  <label for="type">Tipo da Consulta</label>
+                  <select name="type" id="type">
+                     <option value="default" selected disabled>Selecione</option>
+                     <option value="local">Local</option>
+                     <option value="remote">Remota</option>
+                  </select>
+               </div>
+               <div id="time-date">
+                  <label for="date">Data da consulta</label>
+                  <input type="date" name="date" id="date">
+                  <label for="time">Horário da consulta</label>
+                  <input type="time" name="time" id="time">
+               </div>
+               <div id="appoinment-observation">
+                  <textarea name="observation" id="observation" cols="30" rows="10"></textarea>
+               </div>
+            </form>
+         </div>
          <div id="fade" class="hide"></div>
          <div id="modal">
             <div class="modal-body">
