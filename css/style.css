@@ -60,6 +60,7 @@ header .header-content p {
    max-width: 425px;
    flex: 1;
    margin-bottom: 2rem;
+   border-bottom: 1px solid var(--button-color2);
 }
 
 .query-list > span {
@@ -277,8 +278,85 @@ header .header-content p {
 }
 
 .new-query {
-   height: 200px;
+   max-width: 1024px;
+   margin-bottom: 4rem;
    display: none;
+}
+
+.new-query h2 {
+   margin-bottom: 2rem;
+   color: var(--text-color);
+}
+
+.new-query form {
+   height: 100%;
+   background-color: #fff;
+   padding: 1rem;
+   margin-bottom: 2rem;
+   position: relative;
+}
+
+.new-query form .form-content {
+   height: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.new-query form .form-content #inputs {
+   margin-right: 1rem;
+   width: 50%;
+}
+
+.new-query form .form-content #inputs div {
+   display: flex;
+   flex-direction: column;
+   gap: .5rem;
+   margin-bottom: 1rem;
+}
+
+.new-query form .form-content #inputs #time-date {
+   display: flex;
+   flex-direction: column;
+}
+
+.new-query form .form-content input,
+.new-query form .form-content select {
+   height: 2rem;
+   border: none;
+   border-radius: 5px;
+   padding-left: .5rem;
+   background-color: #edede9;
+}
+
+.new-query form .form-content label {
+   font-size: 0.8rem;
+   color: var(--text-color);
+}
+
+.new-query form .form-content #appoiment-observation {
+   display: flex;
+   flex-direction: column;
+   flex: 1;
+   gap: .5rem;
+}
+
+.new-query form .form-content #appoiment-observation textarea {
+   border: none;
+   background-color: #edede9;
+   padding-left: .5rem;
+}
+
+.new-query form .save-button {
+   position: absolute;
+   bottom: 0%;
+   right: 20%;
+   border: none;
+   padding: .8rem .9rem;
+   margin-bottom: 2rem;
+   border-radius: 5px;
+   color: #fff;
+   background-color: var(--button-color2);
+   font-weight: 700;
 }
 
 footer {
@@ -507,6 +585,10 @@ footer .footer-content nav ul li .active-toolbar-button span {
 
    main {
       margin-left: 18vw;
+   }
+
+   .new-query {
+      display: block;
    }
 
    footer {
