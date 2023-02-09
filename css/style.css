@@ -6,6 +6,7 @@
    --background-color: #edede9;
    --button-color: #ffb050;
    --button-color2: #4894FF;  
+   --border-color: #cfcfcf;
 }
 
 * {
@@ -328,6 +329,16 @@ header .header-content p {
    background-color: #edede9;
 }
 
+.new-query form .form-content input:hover,
+.new-query form .form-content select:hover {
+   border: 1px solid var(--border-color);
+}
+
+.new-query form .form-content input:focus,
+.new-query form .form-content select:focus {
+   outline: 1px solid var(--button-color2);
+}
+
 .new-query form .form-content label {
    font-size: 0.8rem;
    color: var(--text-color);
@@ -346,6 +357,14 @@ header .header-content p {
    padding-left: .5rem;
 }
 
+.new-query form .form-content #appoiment-observation textarea:hover {
+   border: 1px solid var(--border-color);
+}
+
+.new-query form .form-content #appoiment-observation textarea:focus {
+   outline: 1px solid var(--button-color2);
+}
+
 .new-query form .save-button {
    position: absolute;
    bottom: 0%;
@@ -357,6 +376,17 @@ header .header-content p {
    color: #fff;
    background-color: var(--button-color2);
    font-weight: 700;
+   cursor: pointer;
+}
+
+.new-query form .save-button:hover {
+   background-color: #4786f0;
+}
+
+.new-query form .save-button:focus {
+   background-color: #4062c9;
+   outline: none;
+   outline: 2px solid var(--button-color2);
 }
 
 footer {
