@@ -3,10 +3,25 @@ import { consultList } from "./consult-list.js";
 const $todayList = document.querySelector('#today-list');
 const $tomorrowList = document.querySelector('#tomorrow-list');
 const $anyDayList = document.querySelector('#anyday-list');
+const $saveButton = document.getElementById('save-button');
+
+$saveButton.addEventListener('click', () => {
+   
+   setTimeout(() => {
+
+      console.log("cliquei")
+
+      $todayList.innerHTML = "";
+      $tomorrowList.innerHTML = "";
+      $anyDayList.innerHTML = "";
+   
+      showQuery();
+   }, 1000);
+})
 
 function createPersonInfo(image, name, queryType) {
    let div = document.createElement('div');
-   let div_wrapInfo= document.createElement('div');
+   let div_wrapInfo = document.createElement('div');
    let div_wrapQuerytype = document.createElement('div')
    let div_personInfo = document.createElement('div');
    let img_person = document.createElement('img');
@@ -42,13 +57,13 @@ function createPersonInfo(image, name, queryType) {
 function timeConvert(start, duration) {
    
    let startTime = Number(start.replace(':', ''));
-   let durationTime = duration === "01:00" ? Number(duration.replace(':', '')) : Number(duration);
-   let timeComplement = durationTime === 100 ? "hora" : "minutos";
+   let durationTime = Number(duration);
+   let timeComplement = durationTime === 60 ? "h" : "min";
    let time = String(startTime + durationTime);
    let halfTime = Math.floor(time.length / 2);
    let updatedTime = time.substring(0, halfTime) + ":" + time.substring(2,time);
    
-   return `${start} - ${updatedTime} (${duration.replace("01:00", "1")} ${timeComplement})`;
+   return `${start} - ${updatedTime} (${duration.replace("60", "1")}${timeComplement})`;
 }
 
 function createQueryInfo(queryStartTime, duration, type) {
@@ -75,7 +90,6 @@ function createQueryInfo(queryStartTime, duration, type) {
       button_address.style.display = "none";
    }
 
-
    div_contact.appendChild(button_video);
    div_contact.appendChild(button_audio);
    div_contact.appendChild(button_address);
@@ -98,7 +112,10 @@ function createQuery(personInfo, queryInfo) {
    return div;
 }
 
-function showQuery() {
+export function showQuery() {
+
+
+
    for(let i = 0; i < consultList.today.length; i++) {
       let consult = consultList.today[i].consult;
 

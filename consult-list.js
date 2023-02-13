@@ -6,7 +6,7 @@ export const consultList = {
             name: "Luciana Dias",
             type: "remota",
             timeStart: "14:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -15,7 +15,7 @@ export const consultList = {
             name: "Larissa Santana",
             type: "local",
             timeStart: "16:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -33,7 +33,7 @@ export const consultList = {
             name: "Luciana Dias",
             type: "remota",
             timeStart: "14:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -51,7 +51,7 @@ export const consultList = {
             name: "Clara Lemos",
             type: "local",
             timeStart: "18:00",
-            duration: "01:00",
+            duration: "60",
          },
       }
    ],
@@ -62,7 +62,7 @@ export const consultList = {
             name: "Clara Lemos",
             type: "local",
             timeStart: "18:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -71,7 +71,7 @@ export const consultList = {
             name: "Luciana Dias",
             type: "remota",
             timeStart: "14:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -89,7 +89,7 @@ export const consultList = {
             name: "Larissa Santana",
             type: "local",
             timeStart: "16:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
    ],
@@ -100,7 +100,7 @@ export const consultList = {
             name: "Clara Lemos",
             type: "local",
             timeStart: "18:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -109,7 +109,7 @@ export const consultList = {
             name: "Luciana Dias",
             type: "remota",
             timeStart: "14:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -118,7 +118,7 @@ export const consultList = {
             name: "Larissa Santana",
             type: "local",
             timeStart: "16:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -136,7 +136,7 @@ export const consultList = {
             name: "Luciana Dias",
             type: "remota",
             timeStart: "14:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
       {
@@ -145,7 +145,7 @@ export const consultList = {
             name: "Clara Lemos",
             type: "local",
             timeStart: "18:00",
-            duration: "01:00",
+            duration: "60",
          },
       },
    ]

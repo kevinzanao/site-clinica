@@ -90,6 +90,7 @@ header .header-content p {
 
 .query-list .list .list-items .person-content > div > img {
    width: 2.5rem;
+   border-radius: 50%;
 }
 
 .query-list .list .list-items .person-content > img {
@@ -370,7 +371,7 @@ header .header-content p {
    bottom: 0%;
    right: 20%;
    border: none;
-   padding: .8rem .9rem;
+   padding: .5rem .9rem;
    margin-bottom: 2rem;
    border-radius: 5px;
    color: #fff;
@@ -621,6 +622,11 @@ footer .footer-content nav ul li .active-toolbar-button span {
       display: block;
    }
 
+   #fade,
+   #modal {
+      display: none;
+   }
+
    footer {
       position: fixed;
       top: 0%;
@@ -706,13 +712,6 @@ footer .footer-content nav ul li .active-toolbar-button span {
 
    footer .footer-content nav ul li a span {
       font-size: .9rem;
-   }
-}
-
-@media screen and (min-width: 1024px) {
-   #fade,
-   #modal {
-      display: none;
    }
 }
 
