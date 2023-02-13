@@ -3,21 +3,6 @@ import { consultList } from "./consult-list.js";
 const $todayList = document.querySelector('#today-list');
 const $tomorrowList = document.querySelector('#tomorrow-list');
 const $anyDayList = document.querySelector('#anyday-list');
-const $saveButton = document.getElementById('save-button');
-
-$saveButton.addEventListener('click', () => {
-   
-   setTimeout(() => {
-
-      console.log("cliquei")
-
-      $todayList.innerHTML = "";
-      $tomorrowList.innerHTML = "";
-      $anyDayList.innerHTML = "";
-   
-      showQuery();
-   }, 1000);
-})
 
 function createPersonInfo(image, name, queryType) {
    let div = document.createElement('div');
@@ -29,7 +14,6 @@ function createPersonInfo(image, name, queryType) {
    let img_type = document.createElement('img');
    let p_queryType = document.createElement('p');
    let img_iconChat = document.createElement('img');
-
 
    img_person.src = image;
    img_person.alt = "person image";

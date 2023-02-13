@@ -148,5 +148,6 @@ export const consultList = {
             duration: "60",
          },
       },
-   ]
+   ],
+   rest: []
 }

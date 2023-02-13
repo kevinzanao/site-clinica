@@ -40,11 +40,11 @@
                   <div id="inputs">
                      <div id="pacient-name">
                         <label for="name">Nome do paciente</label>
-                        <input type="text" id="name" name="name" placeholder="Nome completo" required>
+                        <input type="text" class="input-required" id="name" name="name" placeholder="Nome completo" required>
                      </div>
                      <div id="appoinment-type">
                         <label for="type">Tipo da Consulta</label>
-                        <select name="type" id="type" required>
+                        <select name="type" id="type" class="input-required" required>
                            <option value="default" selected disabled>Selecione</option>
                            <option value="local">Local</option>
                            <option value="remota">Remota</option>
@@ -52,16 +52,16 @@
                      </div>
                      <div id="time-date">
                         <label for="date">Data da consulta</label>
-                        <input type="date" name="date" id="date" required>
+                        <input type="date" name="date" class="input-required" id="date" required>
                         <label for="time">Horário da consulta</label>
-                        <input type="time" name="time" id="time" required>
+                        <input type="time" name="time" class="input-required" id="time" required>
                      </div>
                   </div>
                   <div id="appoiment-observation">
                      <label for="duration">Duração da consulta</label>
-                     <input type="number" name="duration" id="duration" placeholder="Duração em minutos" required>
+                     <input type="number" name="duration" class="input-required" id="duration" placeholder="Duração em minutos" required>
                      <label for="observation">Observações</label>
-                     <textarea name="observation" id="observation" cols="30" rows="10"></textarea>
+                     <textarea name="observation" id="observation" cols="20" rows="7"></textarea>
                   </div>
                </div>
                <button type="submit" class="save-button" id="save-button" name="save-button">Salvar</button>

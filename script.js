@@ -2,6 +2,7 @@ import { consultList } from "./consult-list.js";
 import { showQuery } from "./index.js"
 
 const $form = document.querySelector("form");
+const $allLists = document.querySelectorAll('.list')
 const $inputName = document.getElementById('name');
 const $inputSelectType = document.getElementById('type');
 const $inputDate = document.getElementById('date');
@@ -24,6 +25,17 @@ function getDay(value) {
 
    console.log(week[day])
    return week[day];
+}
+
+function getDate() {
+
+   let date = new Date()
+
+   let todayDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+   let tomorrowDate =  `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate() + 1).padStart(2, '0')}`;
+   let anydayDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate() + 2).padStart(2, '0')}`;
+
+   return [todayDate, tomorrowDate, anydayDate];
 }
 
 function saveForm() {
@@ -56,20 +68,44 @@ function saveForm() {
 
 function addToConsultList(value) {
 
-   let date = new Date()
-   let todayDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+   let date = getDate();
    let consult = value;
+   let todayDateValidation = consult.consult.date === date[0];
+   let tomorrowDateValidation = consult.consult.date === date[1];
+   let anydayDateValidation = consult.consult.date === date[2];
 
-   console.log(todayDate)
+   console.log(date[1])
    console.log(consult.consult.date)
 
-   if(consult.consult.date === todayDate) {
+   if(todayDateValidation) {
       consultList.today.push(value);
-      // showQuery();
+   } else if (tomorrowDateValidation) {
+      consultList.tomorrow.push(value);
+   } else if (anydayDateValidation) {
+      consultList.anyday.push(value);
+   } else {
+      consultList.rest.push(value);
    }
 
-   console.log(consultList.today)
+   setTimeout(() => {
+
+      $inputName.value = '';
+      $inputSelectType.value = 'default';
+      $inputDate.value = '';
+      $inputTime.value = '';
+      $inputDuration.value = '';
+      $inputObservation.value = '';
+   }, 1000)
+
+
+
+   $allLists.forEach(list => {
+      list.innerHTML = '';
+   })   
+
+   showQuery();
 }
+
 
 
 
