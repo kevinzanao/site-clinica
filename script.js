@@ -52,7 +52,7 @@ function saveForm() {
    let time = $inputTime.value;
    let duration = $inputDuration.value;
    let observation = $inputObservation.value;
-   let validation = name === "" || type === "" || time === "" || duration === "";
+   let validation = name === "" || type === "default" || time === "" || duration === "";
 
    let consult = {
       consult: {

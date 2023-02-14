@@ -39,11 +39,16 @@ function createPersonInfo(image, name, queryType) {
 }
 
 function timeConvert(start, duration) {
-   
-   let startTime = Number(start.replace(':', ''));
+
+   let startTime = start.replace(':', '');
    let durationTime = Number(duration);
    let timeComplement = durationTime === 60 ? "h" : "min";
-   let time = String(startTime + durationTime);
+   let time = startTime.length === 4 ? String(Number(startTime) + durationTime) : String(Number(startTime) + durationTime);
+
+   if (time.length === 3) {
+      time = "0" + time;
+   } 
+
    let halfTime = Math.floor(time.length / 2);
    let updatedTime = time.substring(0, halfTime) + ":" + time.substring(2,time);
    
@@ -97,8 +102,6 @@ function createQuery(personInfo, queryInfo) {
 }
 
 export function showQuery() {
-
-
 
    for(let i = 0; i < consultList.today.length; i++) {
       let consult = consultList.today[i].consult;
