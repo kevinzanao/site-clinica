@@ -282,7 +282,6 @@ header .header-content p {
 .new-query {
    max-width: 1024px;
    margin-bottom: 4rem;
-   display: none;
 }
 
 .new-query h2 {
@@ -293,7 +292,7 @@ header .header-content p {
 .new-query form {
    height: 100%;
    background-color: #fff;
-   padding: 1rem;
+   padding: 1.7rem 1rem 1.3rem 1rem;
    margin-bottom: 2rem;
    position: relative;
 }
@@ -388,10 +387,6 @@ header .header-content p {
    background-color: #4062c9;
    outline: none;
    outline: 2px solid var(--button-color2);
-}
-
-.active {
-   display: block;
 }
 
 footer {
@@ -755,12 +750,10 @@ footer .footer-content nav ul li .active-toolbar-button span {
 
 @media screen and (max-width: 767px) {
    .new-query {
-      width: 80%;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      z-index: 2;
-      transform: translate(-50%, -50%);
+      width: 0%;
+      position: absolute;
+      opacity: 0;
+      right: 1000px;
    }
 
    .new-query h2 {
@@ -768,6 +761,16 @@ footer .footer-content nav ul li .active-toolbar-button span {
       padding: 1rem;
       margin: 0;
       border-bottom: 1px solid var(--button-color2);
+   }
+
+   .active {
+      width: 80%;
+      position: fixed;
+      opacity: 1;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
    }
 }
 
@@ -805,6 +808,7 @@ footer .footer-content nav ul li .active-toolbar-button span {
 @media screen and (max-width: 580px) {
 
    .new-query {
+      max-height: 600px;
       margin-top: 1rem;
       height: 110%;
       width: 60%;
@@ -826,8 +830,14 @@ footer .footer-content nav ul li .active-toolbar-button span {
    .new-query form .save-button  {
       position: inherit;
       top: -5%;
-      right: 0;
-      left: 38%;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}
+
+@media screen and (max-width: 425px) {
+   .new-query {
+      width: 75%;
    }
 }
 

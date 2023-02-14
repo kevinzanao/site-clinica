@@ -10,10 +10,16 @@ const $inputTime = document.getElementById('time');
 const $inputDuration = document.getElementById('duration');
 const $inputObservation = document.getElementById('observation');
 const $saveButton = document.getElementById('save-button');
-
-$saveButton.onclick = saveForm;
+const $spanAnyday = document.getElementById('span-alternativo');
 
 let week = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+
+let today = new Date();
+let todayDay = today.getDay();
+
+$spanAnyday.innerText = week[todayDay];
+$saveButton.onclick = saveForm;
+
 
 $form.addEventListener('submit', (event) => {
    event.preventDefault()
@@ -46,7 +52,7 @@ function saveForm() {
    let time = $inputTime.value;
    let duration = $inputDuration.value;
    let observation = $inputObservation.value;
-   let validation = name === "" || type === "" || time === "";
+   let validation = name === "" || type === "" || time === "" || duration === "";
 
    let consult = {
       consult: {
@@ -60,10 +66,20 @@ function saveForm() {
    }
 
    if (!validation) {
-      getDay(date);
       addToConsultList(consult)
-      return consult;
+      clearInput();
    }
+}
+
+function clearInput() {
+   
+      $inputName.value = '';
+      $inputName.focus = false;
+      $inputSelectType.value = 'default';
+      $inputDate.value = '';
+      $inputTime.value = '';
+      $inputDuration.value = '';
+      $inputObservation.value = '';
 }
 
 function addToConsultList(value) {
@@ -74,9 +90,6 @@ function addToConsultList(value) {
    let tomorrowDateValidation = consult.consult.date === date[1];
    let anydayDateValidation = consult.consult.date === date[2];
 
-   console.log(date[1])
-   console.log(consult.consult.date)
-
    if(todayDateValidation) {
       consultList.today.push(value);
    } else if (tomorrowDateValidation) {
@@ -86,18 +99,6 @@ function addToConsultList(value) {
    } else {
       consultList.rest.push(value);
    }
-
-   setTimeout(() => {
-
-      $inputName.value = '';
-      $inputSelectType.value = 'default';
-      $inputDate.value = '';
-      $inputTime.value = '';
-      $inputDuration.value = '';
-      $inputObservation.value = '';
-   }, 1000)
-
-
 
    $allLists.forEach(list => {
       list.innerHTML = '';

@@ -8,7 +8,6 @@ const $buttonLocalQuery = document.querySelector('.local-query button');
 const $requiredInputs = document.querySelectorAll('.input-required');
 const $saveButton = document.getElementById('save-button');
 
-
 $buttonAddQuery.addEventListener('click', () => {
    $fade.classList.toggle("hide");
    $divVideoQuery.classList.add("hidden");
@@ -31,10 +30,7 @@ $saveButton.addEventListener('click', () => {
          $newQueryForm.classList.add('active');
       }
 
-      console.log(isFilled)
-
       if (isFilled) {
-         
          $fade.classList.add("hide");
          $newQueryForm.classList.remove('active');
       }
